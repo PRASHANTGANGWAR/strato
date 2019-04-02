@@ -1,0 +1,12 @@
+apiDebug: true
+password: '1234'
+timeout: 600000
+libPath: ./server/lib
+contractsPath: ./user-contracts/common
+dataFilename: ./config/demo-data.yaml
+deployFilename: ./config/localhost.deploy.yaml
+nodes:
+  - id: 0
+    stratoUrl: 'http://localhost/strato-api'
+    blocUrl: 'http://localhost/bloc/v2.2'
+    searchUrl: 'http://localhost/cirrus'

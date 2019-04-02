@@ -1,0 +1,9 @@
+1. install docker compose
+ https://developers.blockapps.net/install/linux/linux/ 
+
+2. restart ./strato.sh --wipe (clear data , will delete data from blockchain)
+	 
+
+3. strato stop ./strato.sh --stop (stop a running instance of strato)
+
+

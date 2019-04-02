@@ -1,0 +1,34 @@
+check network state
+-> curl -X GET "http://localhost/apex-api/status"
+
+create new user : 
+-> curl -X POST "http://localhost/bloc/v2.2/users/testUser?faucet=true" -H  "accept: application/json;charset=utf-8" -H  "content-type: application/json;charset=utf-8" -d "\"password\""
+
+
+
+Deploy contract
+curl -X POST "http://<url>/bloc/v2.2/users/<username>/<userAddress>/contract" -H  "accept: application/json;charset=utf-8" -H  "content-type: application/json;charset=utf-8" -d "  {  \"value\": \"10\",  \"password\": \"password\",  \"contract\": \"SimpleStorage\",  \"src\": \"contract SimpleStorage { uint storedData; function set(uint x) {  storedData = x; } function get() returns (uint retVal)  { return storedData; } }\"}"
+
+Example ->  curl -X POST "http://localhost/bloc/v2.2/users/prashant.gangwar2/192b55153f78416c3d9f3873d95793b5dfd2e4cb/contract" -H  "accept: application/json;charset=utf-8" -H  "content-type: application/json;charset=utf-8" -d "  {  \"value\": \"10\",  \"password\": \"qwerty@1\",  \"contract\": \"SimpleStorage\",  \"src\": \"contract SimpleStorage { uint storedData; function set(uint x) {  storedData = x; } function get() returns (uint retVal)  { return storedData; } }\"}"
+
+
+
+curl -X POST "http://localhost/bloc/v2.2/users/prashant.gangwar/a0f93ce144d68e1ad464fe63b7ff5d73ec5bb478/contract/SimpleStorage/65e9841f49ce864b6b9b359a644c2ba16c1a283b/call" -H  "accept: application/json;charset=utf-8" -H  "content-type: application/json;charset=utf-8" -d "{  \"password\": \"qwerty@1\",  \"method\": \"set\",  \"args\": {7},  \"value\": 0}"
+
+
+
+curl -X POST "http://localhost/bloc/v2.2/users/prashant.gangwar/a0f93ce144d68e1ad464fe63b7ff5d73ec5bb478/contract/SimpleStorage/65e9841f49ce864b6b9b359a644c2ba16c1a283b/call" -H  "accept: application/json;charset=utf-8"  -H  "content-type: application/json;charset=utf-8"  -d "{  \"password\": \"password\",  \"method\":  \"set\",  \"args\": {7},  \"value\": 0}"
+
+
+
+curl -X GET "http://localhost/bloc/v2.2/contracts/SimpleStorage/65e9841f49ce864b6b9b359a644c2ba16c1a283b/state" -H  "accept: application/json;charset=utf-8"
+
+
+
+
+
+
+
+
+
+

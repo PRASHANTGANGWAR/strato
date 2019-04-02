@@ -1,0 +1,86 @@
+-> STRATO uses an Ethereum client written in Haskell.
+
+-> Bloc has usernames because it acts a private key registry for you Ethereum accounts.
+   Within the Ethereum blockchain there is no concept of users, only of accounts, transactions, and blocks.
+   The key registry has the username to make it easier to sign transactions from an account requiring just a password.
+   
+-> BlockApps STRATO supports various data formats during onboarding and downboarding, such as JSON, XML, and CSV.
+
+-> Searchable Term - for enabling cirrus (component - listen for states of contract on every tx )
+
+-> JSON rpc in Ethereum in strato uses bloc APIs
+
+-> Enterprises can create privacy scoped, permissioned multi-blockchain on their network for private transactions,
+   while participating on consortium-facing main blockchain.(private transaction which are not visible to others)
+
+-> Additionally, BlockApps covers both traditional and blockchain-specific threat models, 
+   including intrusion detection, identity management, disaster recovery, etc. 
+   & smart contract code exploitation, private key comprise, etc.   
+
+-> User workflows with an integrated authorization server and key management can be summarized in 5 steps:
+    1. user registration,
+    2. user log-in,
+    3. API call, 
+    4. transaction signing.
+    In essence, the user workflows are enabled by issued, verifiable access tokens.
+    Access tokens will be used to obtain user identifier and further to sign transactions.
+
+
+<|> Application design pattern <|>
+
+Physical Asset: This smart contract represents a physical asset and describes the basic functionality to allow the asset to be updated.
+Asset Model: This smart contract represents the finite state machine that is used to model the asset states, describes valid asset state transitions, and verifies that an asset transition being requested is valid.
+Asset Snapshot: This smart contract stores historical asset data for easy retrieval of the historical state of the asset.
+Asset Manager: This smart contract encapsulates all the business logic for operating on the asset, providing a separation between data and logic. This makes future updates to the logic of the system more manageable and also provides a single point of concern to add access control mechanisms to the system at a later date.
+ValidationEngine: This smart contract implements a business rule engine which is used to check that the asset data is valid based on a list of validations.
+Compliance Manager: This smart contract handles the addition and maintenance of compliance codes.
+
+
+
+
+
+<|>BlockApps-Rest (sdk functions) <|>
+
+  verbose: [Function: verbose],
+  getEnum: [Function: getEnum],
+  getEnums: [Function: getEnums],
+  getFields: [Function: getFields],
+  RestError: [Function: RestError],
+  HttpError: [Function: HttpError],
+  callMethod: [GeneratorFunction: callMethod],
+  callList: [GeneratorFunction: callList],
+  compile: [GeneratorFunction: compile],
+  compileSearch: [GeneratorFunction: compileSearch],
+  createChain: [GeneratorFunction: createChain],
+  createUser: [GeneratorFunction: createUser],
+  createTestUsers: [GeneratorFunction: createTestUsers],
+  fill: [GeneratorFunction: fill],
+  getAccount: [GeneratorFunction: getAccount],
+  getAbi: [GeneratorFunction: getAbi],
+  getAbiEnums: [GeneratorFunction: getAbiEnums],
+  getBalance: [GeneratorFunction: getBalance],
+  getChainInfo: [GeneratorFunction: getChainInfo],
+  getChainInfos: [GeneratorFunction: getChainInfos],
+  getContractString: [GeneratorFunction: getContractString],
+  getState: [GeneratorFunction: getState],
+  getStateVar: [GeneratorFunction: getStateVar],
+  getUsers: [GeneratorFunction: getUsers],
+  isCompiled: [GeneratorFunction: isCompiled],
+  isSearchable: [GeneratorFunction: isSearchable],
+  uploadContract: [GeneratorFunction: uploadContract],
+  uploadContractList: [GeneratorFunction: uploadContractList],
+  uploadContractString: [GeneratorFunction: uploadContractString],
+  query: [GeneratorFunction: query],
+  send: [GeneratorFunction: send],
+  sendList: [GeneratorFunction: sendList],
+  getBlocResult: [GeneratorFunction: getBlocResult],
+  getBlocResults: [GeneratorFunction: getBlocResults],
+  resolveResults: [GeneratorFunction: resolveResults],
+  transactionResult: [GeneratorFunction: transactionResult],
+  until: [GeneratorFunction: until],
+  queryUntil: [GeneratorFunction: queryUntil],
+  waitQuery: [GeneratorFunction: waitQuery],
+  waitTransactionResult: [GeneratorFunction: waitTransactionResult],
+  getNonce: [GeneratorFunction: getNonce],
+  keystore: [GeneratorFunction: keystore],
+  setLogger: [Function: setLogger] } 'restApi
