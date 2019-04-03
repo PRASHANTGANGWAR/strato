@@ -2,14 +2,14 @@ const fetch = require("node-fetch");
 
 function uploadContract(){
 
-    const username = 'alice';
-    const password = 'securePassword';
-    const address = 'bf39b2f81bf6be824e7314e72701318485587e';
+    const username = 'test';
+    const password = 'test';
+    const address = '0956fc65ff7f98c688c4652832d6206134773535';
     const args = { uint: '9'}
     const src = 
-        `pragma solidity ^0.4.24;
+         `pragma solidity ^0.4.24;
 
-        contract SimpleStorage {
+        contract hello {
             uint storedData;
             function set(uint x) { storedData = x; }
             function get() returns (uint retVal) { 

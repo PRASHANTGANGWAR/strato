@@ -1,18 +1,19 @@
 const fetch = require("node-fetch");
 
 function callContract() {
-
+  const HOST_URL=  'http://localhost'
     const blocURL = HOST_URL + '/bloc/v2.2/users/';
-    const username = 'alice';
-    const password = "securePassword";
+    const username = 'test';
+    const password = "test";
     const methodName = 'set';
-    const address = '87168271eb895681f7b724bde31c4f0';
-    const contractAddress = 'b823216ffb44fcea8e5eee8435aef';
+    const address = '0956fc65ff7f98c688c4652832d6206134773535';
+    const contractAddress = 'afa7fb46a69c7ce0728c5ff9513b2a5ddfef3e5b';
+    const contractName = "hello"
     const callArgs = {
-      set: '7',
+      x: '7',
     };
 
-    fetch(blocURL + username + '/' + address + '/contract/SimpleStorage/' + contractAddress + '/call?resolve', {
+    fetch(blocURL + username + '/' + address + '/contract/hello/' + contractAddress + '/call?resolve', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

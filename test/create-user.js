@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 
 function createAccount() {
 
-  const username = 'alice';
+  const username = 'alice123';
   const password = 'securePassword';
 
   fetch('http://localhost/bloc/v2.2/users/' + username, {

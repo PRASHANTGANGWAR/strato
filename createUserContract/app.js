@@ -9,47 +9,34 @@ const common = ba.common;
 const config = common.config;
 const util = common.util;
 const fsutil = common.fsutil;
-var mocha = require('mocha')
-var describe = mocha.describe
-
 const cors = require('cors');
-console.log(rest,"restApi")
+const co = require('co');
 
+const adminName = util.uid('Admin');   // util.uid('Admin4'); fiffrent nane
+const adminPassword = '7890';   // FIXME
 
-describe('Supply Chain Demo App - deploy contracts', function () {
-    this.timeout(900 * 1000);
-  
-    assert.isDefined(config.dataFilename, 'Data argument missing. Set in config, or use --data <path>');
-  
-    const adminName = util.uid('Admin');  // FIXME
-    const adminPassword = '7890';   // FIXME
-  
-    // uploading the admin contract and dependencies
-    it('should upload the contracts', function* () {
-      // get the dapp
-      const admin = yield rest.createUser(adminName, adminPassword);
-      console.log(admin," 12121212")
-      // wait for the transaction to be added to blockchain
-      do {
-        yield new Promise(resolve => setTimeout(resolve, 1000))
-      } while ((yield rest.getBalance(admin.address)) < 1);
-      const dapp = yield dappJs.uploadContract(admin, config.libPath);
-      const deployment = yield dapp.deploy(config.dataFilename, config.deployFilename);
-    });
-  });
+const contractName = 'UserManager';
+const contractFilename = 'user-contracts/common/user.manager.sol';
 
-// const adminName = "Admin4" // util.uid('Admin4');
-// const adminPassword = '7890';   // FIXME
+// var user = rest.createUser(adminName, adminPassword);
+// console.log(user.next(),"gen.next()");
 
-function* generator(adminName,adminPassword) {
-    console.log("GENERATOR START")
+var state = rest.getUsers();
+console.log(state.next(),"gen.next()");
 
-    const admin = yield rest.createUser(adminName, adminPassword);
-    console.log(admin,"12121212")
-  }
-  var gen = generator(adminName,adminPassword);
-  console.log(gen.next(),"gennnnnnnnn")
+// function* uploadContract(admin, args) {
+//     console.log("upload contract")
+//     const contract = yield rest.uploadContract(admin, contractName, contractFilename, args);
+//     console.log("upload contract",contract)
+    
+// }
+// //   uploadContract()
+//   var gen1 = uploadContract(adminName,adminPassword);// calling generatoir function
+//   console.log(gen1,"gennnnnnnnn")
+//   console.log(gen1.next(),"gennnnnnnnn, gen next1")
+//   console.log(gen1.next(),"gennnnnnnnn, gen next2")
 
+ 
 
 // read the app deployment file
 // const deploy = fsutil.yamlSafeLoadSync(config.deployFilename, config.apiDebug);
@@ -79,7 +66,7 @@ app.use(cors());
 
 
 // get the intended port number, use port 3031 if not provided
-const port = process.env.PORT || 3032;
+const port = process.env.PORT || 3033;
 
 const server = app.listen(port, (err) => {
   if (err) {

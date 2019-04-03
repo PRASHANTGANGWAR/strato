@@ -84,3 +84,14 @@ Compliance Manager: This smart contract handles the addition and maintenance of 
   getNonce: [GeneratorFunction: getNonce],
   keystore: [GeneratorFunction: keystore],
   setLogger: [Function: setLogger] } 'restApi
+
+
+<|>transaction avg time <|>
+  We follow the same Proof of Work mining and consensus mechanism as Ethereum but we’ve built transaction batching in STRATO 
+  available to developers via our API’s 
+  - so you can pack multiple Tx and contract events per block and that gives you a much larger tps throughput.
+
+  <|>The BlockApps STRATO platform consists of 3 different APIs <|>
+Bloc - Provides endpoints to manage off chain data, user identitfy and contract metadata. Also provides endpoints to compile and upload contracts. Bloc depends on STRATO
+STRATO - Provides endpoints manages on chain data (transactions, accounts, account storage)
+Cirrus - Provides endpoints to lets you search and query contracts, so you can run custom reductions and create usable user interfaces/dashboards/reports from onchain data.

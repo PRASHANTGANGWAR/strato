@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 function faucet() {
 
-  const address = 'bf39b2f81bf6be824e7314e72701318485587e'
+  const address = '5499b1cb39f969ed7f5fcc37ea4b88506f5a2941'
 
   fetch('http://localhost/strato-api/eth/v1.2/faucet', {
       method: 'POST',
