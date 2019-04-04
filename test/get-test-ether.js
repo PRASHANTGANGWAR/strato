@@ -20,3 +20,12 @@ function faucet() {
 }
 
 faucet()
+
+// var request = require('request');
+
+// var address = "5499b1cb39f969ed7f5fcc37ea4b88506f5a2941"
+// request('http://localhost/strato-api/eth/v1.2/faucet', function (error, response, body) {
+//     // console.log('body:', body);
+//     console.log('test123:', body) //chain id in response.id
+
+//     })

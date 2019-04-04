@@ -7,3 +7,9 @@
 3. strato stop ./strato.sh --stop (stop a running instance of strato)
 
 
+Configure PBFT
+
+$ ./strato.sh keygen --3
+
+In strato-getting-started run ./strato.sh --keygen --{count}, 
+where count is the number of private key and address pairs to generate:
