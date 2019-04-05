@@ -1,4 +1,4 @@
-uploadFile() {
+function uploadFile() {
 
     const content = "../path/to/my/file";
     const provider = "amazon";
@@ -9,7 +9,7 @@ uploadFile() {
         headers: "content-type: application/json",
         body: JSON.stringify(content, provider, metadata)
         },
-    })
+    )
     .then(function(response) {
         console.log(response);
     })  
@@ -18,5 +18,6 @@ uploadFile() {
     })
 }
 
+uploadFile()
 // https://developers.blockapps.net/advanced/external-storage/
 // 

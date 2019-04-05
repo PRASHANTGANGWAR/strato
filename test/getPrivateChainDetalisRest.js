@@ -12,7 +12,7 @@ var request = require('request');
 request('http://localhost/strato-api/eth/v1.2/chain', function (error, response, body) {
     // console.log('body:', body);
     // console.log('test123:', body) //chain id in response.id
-    console.log('test123:', body[0]) //chain id in response.id
+    console.log('test123:', body) //chain id in response.id
 
     console.log('test123:555555555555555555555555555555555555555') //chain id in response.id
 
