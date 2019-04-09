@@ -3,10 +3,10 @@ const fetch = require("node-fetch");
 var request = require('request');
 
 
-const contractName = "Raffle"
+const contractName = "test"
 const searchable = [contractName]
 const contractSrc = `contract ${contractName} {
-    address[] public enttries;
+    address[] public entries;
     uint public ticketCount;
     uint public ticketPrice;
     string public name;
@@ -75,35 +75,35 @@ const contractSrc = `contract ${contractName} {
 
 
 
-fetch(
-    compileUrl, {
-      method: 'POST',
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify([{
-        "contractName": contractName,
-        "source": contractSrc,
-        "searchable": [contractName]
-      }])
-    }
-  )
-    .then((response) => {
-      console.log(response, "Response")
-    })
+// fetch(
+//     compileUrl, {
+//       method: 'POST',
+//       headers: {
+//         "content-type": "application/json"
+//       },
+//       body: JSON.stringify([{
+//         "contractName": contractName,
+//         "source": contractSrc,
+//         "searchable": [contractName]
+//       }])
+//     }
+//   )
+//     .then((response) => {
+//       console.log(response, "Response")
+//     })
 
  
 
 
 
-// function compileContract(){
+function compileContract(){
 
-//     request.post('http://localhost/bloc/v2.2/contracts/compile',  {form:{
-//         "contractName": contractName,
-//         "source": contractSrc,
-//         "searchable": [contractName]
-//       }}, function (error, response, body) {
-//       console.log('body:', body); 
-//     })
-//     }
-//     compileContract()
+    request.post('http://localhost/bloc/v2.2/contracts/compile',  {form:{
+        "contractName": contractName,
+        "source": contractSrc,
+        "searchable": [contractName]
+      }}, function (error, response, body) {
+      console.log('body:', body); 
+    })
+    }
+    compileContract()
